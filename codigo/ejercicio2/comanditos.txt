@@ -1,0 +1,11 @@
+mongoimport -d tp2 -c facturas --file coleccion_facturas.json --jsonArray --drop
+mongoimport -d tp2 -c ventas --file coleccion_ventas.json --jsonArray --drop
+
+db.facturas.mapReduce(map1,reduce1,{query : {}, out : "map_res1"})
+db.ventas.mapReduce(map2,reduce2,{query : {}, out : "map_res2"})
+db.ventas.mapReduce(map3,reduce3,{query : {}, out : "map_res3"})
+db.facturas.mapReduce(map4,reduce4,{query : {}, out : "map_res4"})
+db.facturas.mapReduce(map5,reduce5,{query : {}, out : "map_res5"})
+db.ventas.mapReduce(map6,reduce6,{query : {}, out : "map_res6"})
+db.map_res6.find()
+

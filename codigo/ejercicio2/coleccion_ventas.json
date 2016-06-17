@@ -1,0 +1,40 @@
+{
+	"fecha": "11/01/2010",
+	"id": 0,
+	"idComprador": "100/2010",
+	"idVendedor": "120/2010",
+	"calificacionComprador": 9,
+	"calificacionVendedor": 10,
+	"comision": 50,
+	"tipoPublicacion": "Oro"	
+}
+{
+	"fecha": "12/01/2010",
+	"id": 1,
+	"idComprador": "120/2010",
+	"idVendedor": "350/2012",
+	"calificacionComprador": 4,
+	"calificacionVendedor": 5,
+	"comision": 200,
+	"tipoPublicacion": "Plata"	
+}
+{
+	"fecha": "12/11/2010",
+	"id": 2,
+	"idComprador": "774/2005",
+	"idVendedor": "350/2012",
+	"calificacionComprador": 8,
+	"calificacionVendedor": 8,
+	"comision": 120,
+	"tipoPublicacion": "Plata"	
+}
+{
+	"fecha": "12/08/2011",
+	"id": 3,
+	"idComprador": "120/2007",
+	"idVendedor": "774/2005",
+	"calificacionComprador": 1,
+	"calificacionVendedor": 1,
+	"comision": 200,
+	"tipoPublicacion": "Bronce"	
+}

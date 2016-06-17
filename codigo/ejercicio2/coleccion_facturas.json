@@ -1,0 +1,84 @@
+{
+	"id": "100/2010",
+	"usuario": "Jose Lopez",
+	"suscripcion": "Oro",
+	"monto": 23,
+	"fecha": "10/01/2004"
+}
+{
+	"id": "120/2010",
+	"usuario": "Luis Gonzalez",
+	"suscripcion": "Oro",
+	"monto": 25,
+	"fecha": "10/01/2004"
+}
+{
+	"id": "350/2012",
+	"usuario": "Armando Casitas",
+	"suscripcion": "Oro",
+	"monto": 28,
+	"fecha": "10/01/2010"
+}
+{
+	"id": "350/2012",
+	"usuario": "Armando Casitas",
+	"suscripcion": "Oro",
+	"monto": 22,
+	"fecha": "11/01/2010"
+}
+{
+	"id": "350/2012",
+	"usuario": "Armando Casitas",
+	"suscripcion": "Oro",
+	"monto": 150,
+	"fecha": "12/01/2010"
+}
+{
+	"id": "350/2012",
+	"usuario": "Armando Casitas",
+	"suscripcion": "Oro",
+	"monto": 19,
+	"fecha": "10/12/2010"
+}
+{
+	"id": "250/2012",
+	"usuario": "Susana Perez",
+	"suscripcion": "Rubí",
+	"monto": 21,
+	"fecha": "10/12/2004"
+}
+{
+	"id": "450/2011",
+	"usuario": "Rosa Rossetti",
+	"suscripcion": "Rubí",
+	"monto": 23,
+	"fecha": "23/01/2004"
+}
+{
+	"id": "443/2014",
+	"usuario": "Julian Saraza",
+	"suscripcion": "Rubí",
+	"monto": 29,
+	"fecha": "22/02/2010"
+}
+{
+	"id": "443/2014",
+	"usuario": "Roberto Suarez",
+	"suscripcion": "Platino",
+	"monto": 18,
+	"fecha": "10/01/2005"
+}
+{
+	"id": "774/2005",
+	"usuario": "Valentino Fernandez",
+	"suscripcion": "Platino",
+	"monto": 29,
+	"fecha": "10/01/2005"
+}
+{
+	"id": "120/2007",
+	"usuario": "Guillermo Abadi",
+	"suscripcion": "Biología",
+	"monto": 21,
+	"fecha": "10/01/2005"
+}
