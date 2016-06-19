@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+num_shards=5
+config_port=$((10000 + $num_shards + 1))
+routing_port=$(($config_port + 1))
+
+for shard_id in $(seq 1 $num_shards)
+do
+  port=$((10000 + $shard_id))
+  echo "Launching shard $shard_id on port $port."
+  (
+    mongod --dbpath servers/localhost$port/ --shutdown ;
+    rm -rf servers/localhost$port ;
+    mkdir -p servers/localhost$port ;
+    mongod --rest --httpinterface --shardsvr --port $port --dbpath servers/localhost$port --logpath servers/localhost$port/log
+  ) &
+done
+
+echo "Launching config server on port $config_port."
+(
+  mongod --dbpath servers/localhost$config_port/ --shutdown ;
+  rm -rf servers/localhost$config_port ;
+  mkdir -p servers/localhost$config_port ;
+  mongod --rest --httpinterface --configsvr --port $config_port --dbpath servers/localhost$config_port --logpath servers/localhost$config_port/log
+) &
+
+echo "Launching routing service on port $routing_port."
+(
+  killall mongos ;
+  mkdir -p log ;
+  mongos --port $routing_port --configdb localhost:$config_port > log/run_routing_service.log
+) &

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+num_shards=5
+config_port=$((10000 + $num_shards + 1))
+routing_port=$(($config_port + 1))
+
+
+# echo "Running experiment 'ranges'. Log in file: log/experiment-ranges.log."
+# mongo localhost:$routing_port/exp_sharding --eval "var shardingMode = 'ranges';" run_experiment.js \
+#   > log/experiment-ranges.log
+
+echo "Running experiment 'hashed'. Log in file: log/experiment-hashed.log."
+mongo localhost:$routing_port/exp_sharding --eval "var shardingMode = 'hashed';" run_experiment.js \
+  > log/experiment-hashed.log
+
