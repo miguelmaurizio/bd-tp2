@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.5in, top=3cm, bottom=2cm]{geometry}
+\usepackage[spanish, activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} %Para incluir el logo de la UBA
+\usepackage{caratula} %Para armar el cuadro de integrantes
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage[lined,ruled,linesnumbered]{algorithm2e}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[final]{pdfpages}
+\providecommand{\DontPrintSemicolon}{\dontprintsemicolon}
+
+\graphicspath{{imagenes/}}
+
+\newcommand\comentario[2]{\textbf{{[#1: \textcolor{red}{#2}}}]}
+\renewcommand\comentario[2]{}
+
+\setcounter{secnumdepth}{5}
+
+\begin{document}
+
+\integrante{Almansi, Emilio}{674/12}{ealmansi@gmail.com}
+\integrante{Fixman, Martín}{391/11}{martinfixman@gmail.com}
+\integrante{Gunski, María Celeste}{899/03}{celestegunski@gmail.com}
+\integrante{Maurizio, Miguel}{635/11}{miguelmaurizio\_92@hotmail.com}
+
+\def\Materia{Bases de Datos}
+\def\Titulo{Trabajo Pr\'{a}ctico 2}
+\def\Fecha{1er Cuatrimestre 2016}
+%----- CARATULA -----%
+
+\thispagestyle{empty}
+
+\begin{center}
+	\includegraphics[scale = 0.25]{imagenes/logo_uba.jpg}
+\end{center}
+
+\begin{center}
+	{\textbf{\large UNIVERSIDAD DE BUENOS AIRES}}\\[1.5em]
+	{\textbf{\large Departamento de Computaci\'{o}n}}\\[1.5em]
+    {\textbf{\large Facultad de Ciencias Exactas y Naturales}}\\
+    \vspace{35mm}
+    {\LARGE\textbf{\Materia}}\\[1em]    
+    \vspace{15mm}
+    {\Large \textbf{\Titulo}}\\[1em]
+    \vspace{15mm}
+    {\textbf{\Large \Fecha}}\\
+    \vspace{15mm}
+    \textbf{\tablaints}
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\parskip=5pt
+\setlength{\parindent}{0pt}
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\pagestyle{plain}
+
+\input{introduccion}
+\newpage
+\input{ejercicio1}
+\newpage
+\input{ejercicio2}
+\newpage
+\input{ejercicio3}
+\newpage
+\input{conclusion}
+\newpage
+
+\end{document}
