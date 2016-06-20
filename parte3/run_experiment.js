@@ -8,8 +8,8 @@ if (shardingMode === 'ranges') {
 }
 
 // Define number of insertions in experiment.
-var numberOfInsertions = 50000;
-var numberOfInsertionsPerBatch = 2000;
+var numberOfInsertions = 500000;
+var numberOfInsertionsPerBatch = 20000;
 assert(numberOfInsertions % numberOfInsertionsPerBatch == 0);
 
 // Create ids in range 0 .. numberOfInsertions in random order.
