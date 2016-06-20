@@ -9,7 +9,9 @@ routing_port=$(($config_port + 1))
 # mongo localhost:$routing_port/exp_sharding --eval "var shardingMode = 'ranges';" run_experiment.js \
 #   > log/experiment-ranges.log
 
-echo "Running experiment 'hashed'. Log in file: log/experiment-hashed.log."
-mongo localhost:$routing_port/exp_sharding --eval "var shardingMode = 'hashed';" run_experiment.js \
-  > log/experiment-hashed.log
-
+for exp_id in $(seq 1 10)
+do
+  echo "Running experiment 'hashed' no $exp_id. Log in file: log/experiment-hashed-$exp_id.log."
+  mongo localhost:$routing_port/exp_sharding --eval "var shardingMode = 'hashed';" run_experiment.js \
+    > log/experiment-hashed-$exp_id.log
+done
