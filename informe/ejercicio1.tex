@@ -6,19 +6,19 @@
 \end{verbatim}
 Los datos para llenarlos se pueden obtener ejecutando la siguiente consulta en la base de SQL:
 \begin{verbatim}
-SELECT f.idFactura AS id, f.idUsuario AS usuario, true AS suscripcionRubi, f.monto, 
+SELECT f.idFactura AS id, f.idUsuario AS usuario, 1 AS suscripcionRubi, f.monto, 
 f.periodo AS fecha
 FROM factura f 
 INNER JOIN suscripcionRubiOriente sr ON f.idUsuario = sr.idUsuario
 WHERE f.periodo = sr.periodo 
-AND f.periodo < SELECT date('now','-1 month')
+AND f.periodo < date('now','-1 month')
 UNION 
-SELECT f.idFactura AS id, f.idUsuario AS usuario, false AS suscripcionRubi, f.monto, 
+SELECT f.idFactura AS id, f.idUsuario AS usuario, 0 AS suscripcionRubi, f.monto, 
 f.periodo AS fecha
 FROM factura f
 WHERE f.idUsuario NOT IN 
 (SELECT idUsuario FROM suscripcionRubiOriente WHERE periodo = f.periodo)
-AND f.periodo < SELECT date('now','-1 month')
+AND f.periodo < date('now','-1 month')
 \end{verbatim}
 
 \item Los documentos correspondientes a las ventas realizadas tendr\'an el siguiente dise\~no:
@@ -38,7 +38,7 @@ WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion
 AND p.nombreTipoPublicacion = tp.nombre 
 AND it.idPublicacion = c.idPublicacion AND it.tipo = 1
 AND c.idCalificacion = cal.idCalificacion
-AND c.fecha < SELECT date('now','-1 month')
+AND c.fecha < date('now','-1 month')
 UNION
 SELECT c.idCompra AS id, c.fecha AS fecha, c.idUsuario AS idComprador, 
 p.idUsuario AS idVendedor, cal.valoracionComprador AS calificacionComprador, 
@@ -50,7 +50,7 @@ WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion
 AND p.nombreTipoPublicacion = tp.nombre 
 AND it.idPublicacion = c.idPublicacion AND it.tipo = 0
 AND c.idCalificacion = cal.idCalificacion
-AND c.fecha < SELECT date('now','-1 month')
+AND c.fecha < date('now','-1 month')
 UNION
 SELECT c.idCompra AS id, c.fecha AS fecha, c.idUsuario AS idComprador, 
 p.idUsuario AS idVendedor, cal.valoracionComprador AS calificacionComprador, 
@@ -62,7 +62,7 @@ WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion
 AND p.nombreTipoPublicacion = tp.nombre 
 AND it.idPublicacion = c.idPublicacion AND it.tipo <> 0 AND it.tipo <> 1
 AND c.idCalificacion = cal.idCalificacion
-AND c.fecha < SELECT date('now','-1 month')
+AND c.fecha < date('now','-1 month')
 \end{verbatim}
 
 \end{itemize}
