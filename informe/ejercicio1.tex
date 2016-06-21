@@ -34,9 +34,9 @@ cal.valoracionVendedor AS calificacionVendedor, (tp.comision * p.precio) AS comi
 "servicio" AS tipoDePublicacion
 FROM compra c, calificacion cal, publicacion p, publicacionFinalizada pf, 
 tipoPublicacion tp, item it
-WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
+WHERE c.idPublicacionFinalizada = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
 AND p.nombreTipoPublicacion = tp.nombre 
-AND it.idPublicacion = c.idPublicacion AND it.tipo = 1
+AND it.idPublicacion = c.idPublicacionFinalizada AND it.tipo = 1
 AND c.idCalificacion = cal.idCalificacion
 AND c.fecha < date('now','-1 month')
 UNION
@@ -46,9 +46,9 @@ cal.valoracionVendedor AS calificacionVendedor,
 (tp.comision * p.precio) AS comision, "producto" AS tipoDePublicacion
 FROM compra c, calificacion cal, publicacion p, publicacionFinalizada pf, 
 tipoPublicacion tp, item it
-WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
+WHERE c.idPublicacionFinalizada = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
 AND p.nombreTipoPublicacion = tp.nombre 
-AND it.idPublicacion = c.idPublicacion AND it.tipo = 0
+AND it.idPublicacion = c.idPublicacionFinalizada AND it.tipo = 0
 AND c.idCalificacion = cal.idCalificacion
 AND c.fecha < date('now','-1 month')
 UNION
@@ -58,9 +58,9 @@ cal.valoracionVendedor AS calificacionVendedor,
 (tp.comision * p.precio) AS comision, "mixto" AS tipoDePublicacion
 FROM compra c, calificacion cal, publicacion p, publicacionFinalizada pf, 
 tipoPublicacion tp, item it
-WHERE c.idPublicacion = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
+WHERE c.idPublicacionFinalizada = pf.idPublicacion AND pf.idPublicacion = p.idPublicacion 
 AND p.nombreTipoPublicacion = tp.nombre 
-AND it.idPublicacion = c.idPublicacion AND it.tipo <> 0 AND it.tipo <> 1
+AND it.idPublicacion = c.idPublicacionFinalizada AND it.tipo <> 0 AND it.tipo <> 1
 AND c.idCalificacion = cal.idCalificacion
 AND c.fecha < date('now','-1 month')
 \end{verbatim}
