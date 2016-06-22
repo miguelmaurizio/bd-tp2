@@ -12,7 +12,7 @@ do
     mongod --dbpath servers/localhost$port/ --shutdown ;
     rm -rf servers/localhost$port ;
     mkdir -p servers/localhost$port ;
-    mongod --rest --httpinterface --shardsvr --port $port --dbpath servers/localhost$port --logpath servers/localhost$port/log
+    mongod --rest --shardsvr --port $port --dbpath servers/localhost$port --logpath servers/localhost$port/log
   ) &
 done
 
@@ -21,7 +21,7 @@ echo "Launching config server on port $config_port."
   mongod --dbpath servers/localhost$config_port/ --shutdown ;
   rm -rf servers/localhost$config_port ;
   mkdir -p servers/localhost$config_port ;
-  mongod --rest --httpinterface --configsvr --port $config_port --dbpath servers/localhost$config_port --logpath servers/localhost$config_port/log
+  mongod --rest --configsvr --port $config_port --dbpath servers/localhost$config_port --logpath servers/localhost$config_port/log
 ) &
 
 echo "Launching routing service on port $routing_port."
