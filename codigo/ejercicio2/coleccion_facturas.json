@@ -1,84 +1,84 @@
 {
 	"id": "100/2010",
 	"usuario": "Jose Lopez",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 23,
 	"fecha": "10/01/2004"
 }
 {
 	"id": "120/2010",
 	"usuario": "Luis Gonzalez",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 25,
 	"fecha": "10/01/2004"
 }
 {
 	"id": "350/2012",
 	"usuario": "Armando Casitas",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 28,
 	"fecha": "10/01/2010"
 }
 {
 	"id": "350/2012",
 	"usuario": "Armando Casitas",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 22,
 	"fecha": "11/01/2010"
 }
 {
 	"id": "350/2012",
 	"usuario": "Armando Casitas",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 150,
 	"fecha": "12/01/2010"
 }
 {
 	"id": "350/2012",
 	"usuario": "Armando Casitas",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 19,
 	"fecha": "10/12/2010"
 }
 {
 	"id": "250/2012",
 	"usuario": "Susana Perez",
-	"suscripcionRubi": "true",
+	"suscripcionRubi": "1",
 	"monto": 21,
 	"fecha": "10/12/2004"
 }
 {
 	"id": "450/2011",
 	"usuario": "Rosa Rossetti",
-	"suscripcionRubi": "true",
+	"suscripcionRubi": "1",
 	"monto": 23,
 	"fecha": "23/01/2004"
 }
 {
 	"id": "443/2014",
 	"usuario": "Julian Saraza",
-	"suscripcionRubi": "true",
+	"suscripcionRubi": "1",
 	"monto": 29,
 	"fecha": "22/02/2010"
 }
 {
 	"id": "443/2014",
 	"usuario": "Roberto Suarez",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 18,
 	"fecha": "10/01/2005"
 }
 {
 	"id": "774/2005",
 	"usuario": "Valentino Fernandez",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 29,
 	"fecha": "10/01/2005"
 }
 {
 	"id": "120/2007",
 	"usuario": "Guillermo Abadi",
-	"suscripcionRubi": "false",
+	"suscripcionRubi": "0",
 	"monto": 21,
 	"fecha": "10/01/2005"
 }
