@@ -8,12 +8,15 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx} %Para incluir el logo de la UBA
+\usepackage{caption}
 \usepackage{caratula} %Para armar el cuadro de integrantes
 %\usepackage{todonotes}
 \usepackage{float}
+\usepackage{lscape}
 %\usepackage[lined,ruled,linesnumbered]{algorithm2e}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{ulem}
 \usepackage[final]{pdfpages}
 \providecommand{\DontPrintSemicolon}{\dontprintsemicolon}
 
@@ -21,6 +24,7 @@
 
 \newcommand\comentario[2]{\textbf{{[#1: \textcolor{red}{#2}}}]}
 \renewcommand\comentario[2]{}
+\renewcommand{\dashuline}{\bgroup \markoverwith{\lower .8ex\hbox{-}}\ULon}
 
 \setcounter{secnumdepth}{5}
 
