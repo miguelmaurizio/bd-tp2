@@ -44,7 +44,7 @@ var map4 = function(){
 var reduce4 = reduce1
 
 var map5 = function(){
-	if(this["suscripcion"] === "Rubí"){
+	if(this["suscripcionRubi"] === "true"){
 		var s = new Date(
 					this["fecha"].replace( /(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")
 				).getFullYear();

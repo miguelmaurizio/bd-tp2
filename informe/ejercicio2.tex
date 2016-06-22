@@ -14,6 +14,8 @@ var map1 = function(){
 var reduce1 = function(key,values){
     return Array.sum(values)
 }
+
+db.facturas.mapReduce(map1,reduce1,{query : {}, out : "map_res1"})
 \end{verbatim}
 
 \subsection{reputación histórica de cada usuario}
@@ -31,6 +33,8 @@ var map2 = function(){
 var reduce2 = function(key,values){
     return Array.sum(values) / values.length
 }
+
+db.ventas.mapReduce(map2,reduce2,{query : {}, out : "map_res2"})
 \end{verbatim}
 
 \subsection{Operaciones con comisión más alta}
@@ -56,6 +60,8 @@ var reduce3 = function(key,values){
     }	
     return {"res": res};
 }
+
+db.ventas.mapReduce(map3,reduce3,{query : {}, out : "map_res3"})
 \end{verbatim}
 
 \subsection{Monto total facturado por año}
@@ -71,6 +77,8 @@ var map4 = function(){
 }
 
 var reduce4 = reduce1
+
+db.facturas.mapReduce(map4,reduce4,{query : {}, out : "map_res4"})
 \end{verbatim}
 
 \subsection{Monto total facturado por año con suscripción Rubí}
@@ -79,7 +87,7 @@ Esta consulta es idéntica a la consulta 4, con la diferencia que antes de emiti
 
 \begin{verbatim}
 var map5 = function(){
-    if(this["suscripcion"] === "Rubí"){
+    if(this["suscripcionRubi"] === "true"){
         var s = new Date(
                 this["fecha"].replace( /(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")
             ).getFullYear();
@@ -89,6 +97,7 @@ var map5 = function(){
 
 var reduce5 = reduce1
 
+db.facturas.mapReduce(map5,reduce5,{query : {}, out : "map_res5"})
 \end{verbatim}
 
 \subsection{Total publicaciones por tipo}
@@ -102,4 +111,5 @@ var map6 = function(){
 
 var reduce6 = reduce1
 
+db.ventas.mapReduce(map6,reduce6,{query : {}, out : "map_res6"})
 \end{verbatim}
