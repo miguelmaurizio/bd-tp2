@@ -1,4 +1,61 @@
-\section{Ejercicio 1}
+\section{Parte 1}
+Para el dise\~no de la base de documentos solicitada se tomar\'a como base la siguiente porci\'on del modelo realizado para el Trabajo Pr\'actico nro. 1\footnote{Cabe aclarar que se han quitado las FK a entidades que no aparecen en la porci\'on que estamos utilizando, para darle mayor claridad a la lectura}:
+
+\begin{description}
+\item[Usuario](\underline{idUsuario}, calle, numero, localidad, telefono, email, tipo)\\
+PK=\{idUsuario\}
+
+ \item[SuscripcionRubiOriente](\underline{idSuscripcion}, periodo, \dashuline{idUsuario})\\
+PK=\{idSuscripcion\}\\
+FK=\{idUsuario\}
+
+ \item[Factura](\underline{idFactura}, periodo, monto, \dashuline{idUsuario})\\
+PK=\{idFactura\}\\
+FK=\{idUsuario\}
+
+\item[Publicacion](\underline{idPublicacion}, titulo, fecha, precio, \dashuline{tipoPublicacion}, tipoVigencia, tipoVenta, \dashuline{idUsuario})\\
+PK=\{idPublicacion\}\\
+FK=\{tipoPublicacion, idUsuario\}
+
+ \item[PublicacionFinalizada](\underline{\dashuline{idPublicacion}})\\
+PK=\{idPublicacion\}\\
+FK=\{tipoPublicacion\}
+
+ \item[TipoPublicacion](\underline{nombre}, comision, costo, nivel, caducidad)\\
+PK=\{nombre\}
+
+ \item[Item](\underline{idItem}, \dashuline{idPublicacion}, nombre, tipo)\\
+PK=\{idItem\}\\
+FK=\{idPublicacion\}
+
+ \item[Producto](\underline{\dashuline{idItem}})\\
+PK=\{idItem\}\\
+FK=\{idItem\}
+
+ \item[Servicio](\underline{\dashuline{idItem}}, precioXHora)\\
+PK=\{idItem\}\\
+FK=\{idItem\}
+
+ \item[Compra](\underline{idCompra}, fecha, \dashuline{idUsuario}, \dashuline{idPublicacion}, \dashuline{idCalificacion})\\
+PK=\{idCompra\}\\
+FK=\{idUsuario, idPublicacion, idCalificacion\}
+
+ \item[Calificacion](\underline{idCalificacion}, valoracionComprador, valoracionVendedor, comentarioComprador, comentarioVendedor)\\
+PK=CK=\{idCalificacion\}
+
+\end{description}
+
+que se corresponde con la secci\'on del diagrama que vemos a continuaci\'on
+
+\begin{landscape}
+    \begin{figure}[c]
+        \frame{\includegraphics[scale=0.40]{imagenes/der-tp2.png}}
+        \captionof{figure}{Diagrama Entidad Relaci\'on}
+    \end{figure}
+\end{landscape}
+
+Desnormalizando esta porci\'on del modelo, generamos los dise\~nos de la base de documentos solicitada:
+
 \begin{itemize}
 \item Los documentos correspondientes a las facturas enviadas tendr\'an el siguiente dise\~no:
 \begin{verbatim}
