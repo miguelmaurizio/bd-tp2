@@ -9,7 +9,7 @@ mongo
 
 Dentro de mongo elegimos la base de datos
 
-use tps
+use tp2
 
 Luego cargamos el archivo con el codigo de los maps y los reduces:
 
