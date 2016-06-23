@@ -1,2 +1,7 @@
 \section{Conclusi'on}
 
+En este trabajo estudiamos los modelos de bases de datos no relacionales. Hemos realizado un diseño en el paradigma $document$ $oriented$ pensado para optimizar querys particulares,  donde luego utilizamos la técnica de MapReduce. También utilizamos $sharding$ para que en un escenario hipotético los accesos a los datos sean eficientes. Se puede observar que el modelado de las bases NoSQL es sencillo y permite que las consultas sean mas simples que en las tradicionales SQL ya que el diseño se orienta a responder consultasde nuestro interes.\\
+
+Tanto MapReduce como Sharding ponen en evidencia la capacidad de estas bases para un escenario de cómputo distribuido, en los cuales los datos se encuentran en varias computadoras.\\
+
+En particular observamos que sharding, bajo ciertas hipotesis en la distribucion de datos ingresados, puede balancear la carga de datos en distintos nodos. Esto supone una mejor utilización del hardware e incluso un mejor tiempo de respuesta para el usuario.
