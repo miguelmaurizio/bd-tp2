@@ -26,7 +26,7 @@ for (var i = 0; i < numberOfInsertions / numberOfInsertionsPerBatch; ++i) {
   for (var j = 0; j < numberOfInsertionsPerBatch; ++j) {
     var idPublicacion = ids[i * numberOfInsertionsPerBatch + j];
     var data = "MongoDB (from humongous) is a free and open-source cross-platform document-oriented database. Classified as a NoSQL database, MongoDB avoids the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data in certain types of applications easier and faster. MongoDB is developed by MongoDB Inc. and is free and open-source, published under a combination of the GNU Affero General Public License and the Apache License.";
-    db.publicaciones.insert({ "id_publicacion": idPublicacion });
+    db.publicaciones.insert({ "id_publicacion": idPublicacion, "data": data });
   }
   db.publicaciones.getShardDistribution();
 }

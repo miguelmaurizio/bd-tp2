@@ -15,6 +15,7 @@ numColumns = numShards + 1          # Additional column for total doc count.
 
 def main():
   export('hashed')
+  export('ranges')
 
 
 def export(experimentId):
@@ -23,10 +24,18 @@ def export(experimentId):
     csvFilePath = os.path.join(scriptDirectory, '../csv/experiment-' + experimentId + '-' + str(experimentNumber) + '.csv')
     documentCounts = []
     with open(logFilePath ,'r') as logFile:
+      valuesRead = None
       for line in logFile:
-        match = re.search("docs : ([0-9]+)", line)
-        if match:
-         documentCounts.append(match.group(1))
+        if line.startswith('Starting batch'):
+          valuesRead = 0
+        elif line.startswith('Totals'):
+          for i in range(numShards - valuesRead):
+            documentCounts.append(0);
+        else:
+          match = re.search("docs : ([0-9]+)", line)
+          if match:
+            documentCounts.append(match.group(1))
+            valuesRead = valuesRead + 1
     assert len(documentCounts) % numColumns == 0
     with open(csvFilePath, 'wb') as csvFile:
       csvWriter = csv.writer(csvFile)
