@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+head -n 1 csv/experiment-hashed-1.csv > csv/experiment-hashed-concat.csv
+cat csv/experiment-hashed-* | grep '^[0-9]' >> csv/experiment-hashed-concat.csv
+
+head -n 1 csv/experiment-ranges-1.csv > csv/experiment-ranges-concat.csv
+cat csv/experiment-ranges-* | grep '^[0-9]' >> csv/experiment-ranges-concat.csv
